@@ -2,11 +2,11 @@ package com.course.challenge.navigation.routes
 
 import kotlinx.serialization.Serializable
 
-sealed interface HomeRoutes {
+sealed interface AppRoutes {
     @Serializable
-    data object Home : HomeRoutes
+    data object Home : AppRoutes
     @Serializable
-    data object Details : HomeRoutes
+    data object Details : AppRoutes
     @Serializable
-    data object About : HomeRoutes
+    data object About : AppRoutes
 }

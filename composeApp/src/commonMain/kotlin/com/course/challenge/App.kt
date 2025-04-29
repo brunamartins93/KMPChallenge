@@ -7,7 +7,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
-import com.course.challenge.navigation.main.HomeNavHost
+import com.course.challenge.navigation.main.AppNavHost
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
@@ -15,7 +15,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 fun App() {
     MaterialTheme {
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-            HomeNavHost(navHostController = rememberNavController())
+            AppNavHost(navHostController = rememberNavController())
         }
     }
 }
