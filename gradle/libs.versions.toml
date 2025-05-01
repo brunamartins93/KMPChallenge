@@ -16,6 +16,7 @@ junit = "4.13.2"
 kotlin = "2.1.20"
 kotlinxSerializationJson = "1.8.0"
 compose-navigation = "2.8.0-alpha10"
+landscapistCoil3 = "2.4.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -34,6 +35,8 @@ androidx-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 #Navigation
 compose-navigation = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "compose-navigation" }
+# Landscapist Coil3
+landscapist-coil3 = { module = "com.github.skydoves:landscapist-coil3", version.ref = "landscapistCoil3" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
