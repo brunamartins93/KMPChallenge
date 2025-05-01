@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun ComponentsPreview() {
     TopBar(
-        onClick = {},
+        onAboutClick = {},
     )
 }
 

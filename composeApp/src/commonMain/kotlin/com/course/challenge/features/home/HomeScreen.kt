@@ -19,10 +19,23 @@ import com.course.challenge.ui.TopBar
 fun HomeScreen(
     navigateToAboutScreen: () -> Unit
 ) {
+    HomeContent(
+        navigateToAboutScreen = navigateToAboutScreen
+    )
+}
+
+@Composable
+fun HomeContent(
+    navigateToAboutScreen: () -> Unit
+) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         containerColor = Color.Black,
-        topBar = { TopBar (onClick = {navigateToAboutScreen()}) },
+        topBar = {
+            TopBar (
+                onAboutClick = {navigateToAboutScreen()},
+            )
+        },
         content = { paddingValues ->
             Column(
                 modifier = Modifier
@@ -41,5 +54,4 @@ fun HomeScreen(
             }
         }
     )
-
 }

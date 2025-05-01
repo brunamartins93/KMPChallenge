@@ -1,13 +1,13 @@
 package com.course.challenge.ui
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
@@ -32,7 +32,9 @@ import androidx.compose.runtime.setValue
 @Composable
 fun TopBar(
     modifier: Modifier = Modifier,
-    onClick: () -> Unit,
+    showBackButton: Boolean = false,
+    onBackClick: () -> Unit = {},
+    onAboutClick: () -> Unit = {},
 ) {
     var expanded by remember { mutableStateOf(false) }
 
@@ -42,6 +44,19 @@ fun TopBar(
             .padding(top = 46.dp)
             .height(56.dp)
     ) {
+        if (showBackButton) {
+            IconButton(
+                onClick = { onBackClick() },
+                modifier = Modifier.align(Alignment.CenterStart)
+            ) {
+                Icon(
+                    imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                    contentDescription = "Voltar",
+                    tint = Color.White
+                )
+            }
+        }
+
         Image(
             painter = painterResource(Res.drawable.logo_kotlin),
             contentDescription = null,
@@ -53,7 +68,6 @@ fun TopBar(
             modifier = modifier
                 .padding(start = 16.dp)
                 .align(Alignment.CenterEnd)
-                .clickable { onClick.invoke() }
         ) {
             IconButton(
                 onClick = { expanded = !expanded },
@@ -75,7 +89,7 @@ fun TopBar(
                     },
                     onClick = {
                         expanded = false
-                        onClick.invoke()
+                        onAboutClick.invoke()
                     },
                 )
             }
